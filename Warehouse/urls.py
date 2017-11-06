@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^aboutus/', include('aboutus.urls')),
     url(r'^store/', include('store.urls')),
+    url(r'^sell/', include('sell.urls')),
     url(r'^$', include('basic.urls')),
 ]
 
