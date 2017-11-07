@@ -12,3 +12,11 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Stock(models.Model):
+    item = models.ForeignKey(Item)
+    quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.item.name + '-' + str(self.quantity)
