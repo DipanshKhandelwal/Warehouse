@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^aboutus/', include('aboutus.urls')),
     url(r'^store/', include('store.urls')),
     url(r'^sell/', include('sell.urls')),
-    url(r'^$', include('buy.urls')),
+    url(r'^buy/', include('buy.urls')),
     url(r'^$', include('basic.urls')),
 ]
 
