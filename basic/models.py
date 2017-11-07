@@ -17,6 +17,7 @@ class Stock(models.Model):
     master = models.ForeignKey(User)
     item = models.ForeignKey(Item)
     quantity = models.IntegerField()
+    stored_date = models.DateField()
 
     def __str__(self):
         return self.item.name + '-' + str(self.quantity)
