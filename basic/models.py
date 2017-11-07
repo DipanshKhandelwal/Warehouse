@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -7,14 +8,13 @@ class Item(models.Model):
     max_storage_temperature = models.FloatField(default=2)
     min_storage_temperature = models.FloatField(default=-10)
     max_storage_time = models.IntegerField()
-    max_storage_available = models.IntegerField()
-    storage_filled = models.IntegerField()
 
     def __str__(self):
         return self.name
 
 
 class Stock(models.Model):
+    master = models.ForeignKey(User)
     item = models.ForeignKey(Item)
     quantity = models.IntegerField()
 
