@@ -1,7 +1,24 @@
 {% extends 'basic/base.html' %}
 
 {% block content %}
+
     <h1>
         This is about page.
     </h1>
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+    <script>
+        function initMap() {
+            var uluru = {lat: 23.259104, lng: 72.650406};
+            var map = new google.maps.Map(document.getElementById('googleMap'), {
+              zoom: 14,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlhGrUO5wzvuE3CwAzkyg8d0I7RldXR0I&callback=initMap"></script>
+
 {% endblock %}
