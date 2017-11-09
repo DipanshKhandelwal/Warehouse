@@ -8,6 +8,7 @@ class Item(models.Model):
     max_storage_temperature = models.FloatField(default=2)
     min_storage_temperature = models.FloatField(default=-10)
     max_storage_time = models.IntegerField()
+    price = models.FloatField(default=0)
 
     def __str__(self):
         return self.name
