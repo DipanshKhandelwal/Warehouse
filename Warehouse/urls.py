@@ -18,9 +18,12 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from basic import views as core_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^signup/$', core_views.signup, name='signup'),
     url(r'^login/$', auth_views.login, name='login'),
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^aboutus/', include('aboutus.urls')),
