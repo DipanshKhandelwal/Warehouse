@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from basic.models import Item, Stock
 import datetime
+import shutil
 
 from reportlab.lib.enums import TA_CENTER
 from reportlab.lib import colors
@@ -76,5 +77,5 @@ def write_pdf(request):
 
     # Send the data and build the file
     doc.build(elements)
-
+    shutil.move(name, "buy/static/pdf/"+name)
     return redirect('/buy')
