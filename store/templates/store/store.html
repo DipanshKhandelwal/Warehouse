@@ -2,6 +2,14 @@
 
 {% block content %}
     <h1>
-        This is store.
+        {% for stock in dict2 %}
+        <p> {{stock.item.name}} is available {{stock.quantity}} stored on {{stock.stored_date}} </p>
+        {% endfor %}
+    </h1>
+    <br><br><br><br><br><br>
+    <h1>
+        {% for item, qnt in dict.items %}
+        <p> {{item}} is available {{qnt}} </p>
+        {% endfor %}
     </h1>
 {% endblock %}
