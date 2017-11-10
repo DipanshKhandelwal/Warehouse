@@ -4,4 +4,11 @@
     <h1>
         This is selling page.
     </h1>
+    {% for i in go %}
+    <h6>
+        <a href="{% url 'open_pdf' slug=i %}">
+        {{i}}.pdf
+        </a>
+    </h6>
+    {% endfor %}
 {% endblock %}
