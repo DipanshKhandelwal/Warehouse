@@ -48,6 +48,10 @@
                 <li class="nav-item">
                     <a class="nav-link" style="color: white" href="{% url 'more' %}">More </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white" href="{% url 'about_us' %}">About Us </a>
+                </li>
+            </ul>
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
