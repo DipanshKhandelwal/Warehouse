@@ -1,5 +1,14 @@
 {% extends 'basic/base.html' %}
 
 {% block content %}
-    This is more page.
+    <form name="itemform" action="" method="post">
+        <label>Items: </label>
+        {% csrf_token %}
+        <select id="items" name="itemform">
+            {% for i in Items %}
+            <option value={{i}}>{{i}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Get">
+    </form>
 {% endblock %}
