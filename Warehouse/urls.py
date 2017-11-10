@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^logout/$', auth_views.logout, name='logout'),
     url(r'^aboutus/', include('aboutus.urls')),
     url(r'^store/', include('store.urls')),
+    url(r'^more/', include('more.urls')),
     url(r'^sell/', include('sell.urls')),
     url(r'^buy/', include('buy.urls')),
     url(r'^$', include('basic.urls')),
