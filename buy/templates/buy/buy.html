@@ -4,4 +4,9 @@
     <h1>
         This is selling page.
     </h1>
+    {% if request.user.is_superuser %}
+    <form action="{% url 'write_pdf'%}">
+        <input type="submit" value="Save" />
+    </form>
+    {% endif %}
 {% endblock %}
