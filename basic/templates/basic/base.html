@@ -12,10 +12,13 @@
     <link rel="stylesheet" href="{% static 'css/basic/basic.css' %}">
     <script src="https://use.fontawesome.com/f2c1d88751.js"></script>
     <style>
-        body{
-            background: url("/media/farm.jpg") no-repeat fixed;
-            background-size:100%;
-        }
+        body {
+            background: url("/media/farm.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            }
         @font-face {
             font-family: Liber;
             src: url('{% static 'fonts/Liber.ttf' %}') format("truetype");
