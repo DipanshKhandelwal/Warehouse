@@ -1,15 +1,49 @@
 {% extends 'basic/base.html' %}
 
 {% block content %}
-    <h1>
-        {% for stock in dict2 %}
-        <p> {{stock.item.name}} is available {{stock.quantity}} stored on {{stock.stored_date}} </p>
-        {% endfor %}
-    </h1>
-    <br><br><br><br><br><br>
-    <h1>
-        {% for item, qnt in dict.items %}
-        <p> {{item}} is available {{qnt}} </p>
-        {% endfor %}
-    </h1>
+<div class="container" style="margin-top: 2%">
+    <div class="row">
+        <div class="col-lg-6" style="background-color: #324491; height: 200px; border-radius: 10px; float: left">
+            <div style="display: flex; justify-content: center;">
+            <h1 style="color: #8099dc;">
+                <u>
+                    Profile
+                </u>
+            </h1>
+            </div>
+            <div>
+                {% for farmer in Farmer%}
+            <h2 style="color: white">
+                <b style="color: #202020">Name:-</b> {{farmer.user.username}}
+            </h2>
+            <h2 style="color: white">
+                <b style="color: #202020">Phone No.:-</b> {{farmer.phone_number}}
+            </h2>
+            <h2 style="color: white">
+                <b style="color: #202020">Address:-</b> {{farmer.address}}
+            </h2>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-6" style="float:right; color: black">
+            <h1 style="color: #26346d; float: right">
+                <u><b>Total Inventory</b></u>
+            </h1>
+            <h4 style="float: right">
+                {% for item, qnt in dict.items %}
+                <p> {{item}} is available {{qnt}} units.</p>
+                {% endfor %}
+            </h4>
+            <br><br><br>
+            <h1 style="color: #26346d; float: right">
+                <u><b>Your storages</b></u>
+            </h1>
+            <h4 style="float: right">
+                {% for stock in dict2 %}
+                <p> {{stock.item.name}} - {{stock.quantity}} stored on {{stock.stored_date}} </p>
+                {% endfor %}
+            </h4>
+        </div>
+    </div>
+</div>
 {% endblock %}
