@@ -10,6 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/basic/basic.css' %}">
+    <script src="https://use.fontawesome.com/f2c1d88751.js"></script>
     <style>
         body{
             background: url("/media/farm.jpg") no-repeat fixed;
@@ -34,40 +35,70 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'home_page' %}">Home </a>
+                    <a class="nav-link" style="color: white" href="{% url 'home_page' %}">
+                        <i class="fa fa-home " aria-hidden="true"></i>
+                        Home
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'store' %}">Store </a>
+                    <a class="nav-link" style="color: white" href="{% url 'store' %}">
+                        <i class="fa fa-archive" aria-hidden="true"></i>
+                        Store
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'sell' %}">Sell </a>
+                    <a class="nav-link" style="color: white" href="{% url 'sell' %}">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                        Sell
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'buy' %}">Buy </a>
+                    <a class="nav-link" style="color: white" href="{% url 'buy' %}">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                        Buy
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'more' %}">More </a>
+                    <a class="nav-link" style="color: white" href="{% url 'more' %}">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                        More
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'about_us' %}">About Us </a>
+                    <a class="nav-link" style="color: white" href="{% url 'about_us' %}">
+                        <i class="fa fa-address-card" aria-hidden="true"></i>
+                        About Us
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" style="color: red" href="{% url 'store' %}">Hi, {{user.username}}</a>
+                        <a class="nav-link" style="color: red" href="{% url 'store' %}">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            Hi, {{user.username}}
+                        </a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="{% url 'login' %}">Login </a>
+                        <a class="nav-link" style="color: white" href="{% url 'login' %}">
+                            <i class="fa fa-sign-in" aria-hidden="true"></i>
+                            Login
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" style="color: white" href="{% url 'signup' %}">SignUp </a>
+                        <a class="nav-link" style="color: white" href="{% url 'signup' %}">
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                            SignUp
+                        </a>
                     </li>
                 {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white" href="{% url 'logout' %}">Logout </a>
+                    <a class="nav-link" style="color: white" href="{% url 'logout' %}">
+                        Logout
+                        <i class="fa fa-power-off fa-lg" aria-hidden="true"></i>
+                    </a>
                 </li>
                 {% endif %}
             </ul>
