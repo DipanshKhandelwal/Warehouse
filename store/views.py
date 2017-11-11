@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from basic.models import Stock, Item
+from basic.models import Stock, Item, Farmer
 from django.contrib.auth.decorators import login_required
 
 
@@ -14,4 +14,5 @@ def store(request):
             my_list.setdefault(i.name, total)
 
         my_list2 = Stock.objects.filter(master=request.user)
-    return render(request, 'store/store.html', {'dict': my_list, 'dict2': my_list2})
+    farmer = Farmer.objects.filter(user=request.user)
+    return render(request, 'store/store.html', {'dict': my_list, 'dict2': my_list2, 'Farmer': farmer})
